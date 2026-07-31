@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: company_brain_db
+    restart: always
+    environment:
+      POSTGRES_USER: brain_user
+      POSTGRES_PASSWORD: brain_pass
+      POSTGRES_DB: company_brain
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
